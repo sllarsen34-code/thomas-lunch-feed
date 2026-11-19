@@ -34,7 +34,7 @@ def date_parse(value):
 
 def fetch(start,end):
     q=urlencode({'buildingId':BUILDING,'districtId':DISTRICT,'startDate':start.strftime('%m-%d-%Y'),'endDate':end.strftime('%m-%d-%Y')})
-    req=Request('https://api.linqconnect.com/api/FamilyMenu?'+q,headers={'User-Agent':'Mozilla/5.0 (compatible; SchoolLunchCalendar/1.0)','Accept':'application/json'})
+    req = Request('https://api.linqconnect.com/api/FamilyMenu?' + q,headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36','Accept': 'application/json'})
     with urlopen(req,timeout=35) as response:
         return json.load(response)
 
